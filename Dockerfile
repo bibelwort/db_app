@@ -2,7 +2,7 @@ FROM python:3.9
 
 WORKDIR /db_app
 
-ADD app.py
+ADD app.py /db_app/
 
 RUN apt-get update && pip install --upgrade pip
 
