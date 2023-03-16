@@ -1,7 +1,7 @@
 # Simple DB reader
 
-This app makes a connection to EXISTING PostgreSQL DB
-and print all data to the screen each 5 seconds
+This app makes a connection to PostgreSQL DB
+and print all data to file each 5 seconds
 
 Installation:
 ```bash
