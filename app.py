@@ -9,7 +9,7 @@ sec_to_sleep =  1
 original_stdout = sys.stdout
 
 for i in range(60):
-    with open('db_app.log', 'w') as f:
+    with open('app.log', 'w') as f:
         sys.stdout = f
         print(db_reader.read())
         sys.stdout = original_stdout
