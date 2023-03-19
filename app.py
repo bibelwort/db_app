@@ -1,18 +1,16 @@
 # This app makes a connection to EXISTING PostgreSQL DB
-# and print all data to a file each 5 seconds
+# and print all data to a file each second
 
 import time
 import sys
-from example_package import example
+from db_package import db_reader
 
-sec_to_sleep =  5
-original_stdout = sys.stdout # Save a reference to the original standard output
+sec_to_sleep =  1
+original_stdout = sys.stdout
 
-with open('db_out.log', 'w+') as f:
-    sys.stdout = f # Change the standard output to the file we created.
-    
-    for i in range(600):
-        print(example.print_db())
-        time.sleep(sec_to_sleep)
-    
-    sys.stdout = original_stdout # Reset the standard output to its original value
+for i in range(60):
+    with open('db_app.log', 'w') as f:
+        sys.stdout = f
+        print(db_reader.read())
+        sys.stdout = original_stdout
+    time.sleep(sec_to_sleep)
